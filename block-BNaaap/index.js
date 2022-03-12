@@ -3,8 +3,10 @@ let http = require("http");
 let getUrl = http.createServer(handel);
 
 function handel(req,res) {
-  res.statusCode(400);
-  res.end('welcome');
+  console.log(req.method);
+  res.statusCode = 400;
+  res.setHeader('Content-Type', 'text/html')
+  res.end('<h1>welcome</h1>');
 }
 
 getUrl.listen(4444, () => {
